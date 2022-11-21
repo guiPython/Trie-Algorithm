@@ -1,0 +1,21 @@
+{
+  "name": "trie",
+  "version": "1.0.0",
+  "description": "Trie autocomplete",
+  "main": "main.js",
+  "scripts": {
+    "build": "npm run clean && npx tsc && npm run copy-files",
+    "clean":"rimraf dist/",
+    "copy-files":"copyfiles -f ./base_words/*.json src/resources/base_words/*.json dist/resources/base_words/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Guilherme Rocha and Thales Cunha",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "copyfiles": "^2.4.1",
+    "fp-ts": "^2.13.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.9.3"
+  }
+}
