@@ -5,7 +5,7 @@ export interface SearchResult {
     suggestions: String[]
 }
 
-export  class Search {
+export class Search {
     private tries: Trie[];
 
     public constructor(tries: Trie[]) {
