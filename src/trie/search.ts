@@ -1,11 +1,11 @@
 import Trie from "./trie";
 
-interface SearchResult {
+export interface SearchResult {
     exists: boolean,
     suggestions: String[]
 }
 
-export default class Search {
+export  class Search {
     private tries: Trie[];
 
     public constructor(tries: Trie[]) {
