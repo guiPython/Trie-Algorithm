@@ -8,7 +8,7 @@ export default class KeypressSpace implements Handler {
         if (key.name === "space") {
             let last = sentence.last();
             if (last != null) {
-                let word: Word = new Word("", []);
+                let word: Word = new Word("", last.suggestions);
                 sentence.add(word);
                 return;
             }

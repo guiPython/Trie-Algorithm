@@ -12,8 +12,10 @@ export default class KeypressBackspace implements Handler {
     handle(sentence: Sentence, key: any): void {
         if (key.name === "backspace") {
             let word = sentence.pop();
+            if (word == null)
+                word = new Word("", []);
             let value = word.value.substring(0, word.value.length - 1);
-            if(value != ""){
+            if (value != "" && value.length > 0) {
                 word.update(value, this.service.execute(value, this.limit).suggestions);
                 sentence.add(word);
             }

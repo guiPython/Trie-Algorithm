@@ -3,7 +3,7 @@ export class Word {
     private _exists: boolean
     private _suggestions: String[]
 
-    public constructor(value: string, suggestions: string[]) {
+    public constructor(value: string, suggestions: String[]) {
         this._value = value;
         this._suggestions = suggestions;
         if (this._suggestions.length === 0)
@@ -62,17 +62,20 @@ export class Sentence {
         return this._words;
     }
 
-    public string(){
-        let str = "Sentence:";
-        for(let word of this._words){
-            if (!word.exists)
-                str += ` \x1b[31m${word.value}\x1b[0m`;
-            else {
-                str += ` ${word.value}`;
+    public string() {
+        if (this.last() != null) {
+            let str = "Sentence:";
+            for (let word of this._words) {
+                if (!word.exists)
+                    str += ` \x1b[31m${word.value}\x1b[0m`;
+                else {
+                    str += ` ${word.value}`;
+                }
             }
+            str += `\nSuggestions: ${this.last().suggestions.join(" ")}`;
+            return str;
         }
-        str += `\nSuggestions: ${this.last().suggestions.join(" ")}`;
-        return str;
+        return "Digite uma palavra: "
     }
 }
 

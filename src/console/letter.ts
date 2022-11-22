@@ -16,7 +16,7 @@ export default class KeypressLetter implements Handler {
     handle(sentence: Sentence, key: any): void {
         if (alphabet.includes(key.name)) {
             let word: Word = sentence.pop();
-            if(word == null)
+            if (word == null)
                 word = new Word("", []);
             let value = word.value + key.name;
 

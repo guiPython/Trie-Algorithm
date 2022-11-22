@@ -14,7 +14,7 @@ const main = () => {
     let sentence = new Sentence();
     let handler = new ConsoleHandler(service, limit);
 
-    console.log("Digite a palavra:");
+    console.log("Digite uma palavra:");
 
     process.stdin.on('keypress', (_, key) => {
         handler.handle(sentence, key);
