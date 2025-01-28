@@ -1,4 +1,4 @@
-# Trie-ALG.EII
+# Trie Algorithms and Data Structures II - UFABC
 
 ## Requisitos
 * NodeJS 18.x
